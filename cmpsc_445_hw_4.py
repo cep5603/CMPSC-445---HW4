@@ -70,8 +70,7 @@ def scrape_listings(zipcode):
                 continue
         
         try:
-            next_button = driver.find_element(By.CLASS_NAME, 'bp-Button PageArrow clickable Pagination__button PageArrow__direction--next bp-Button__type--ghost bp-Button__size--compact bp-Button__icon-only')
-            print(f'NEXT FOUND: {next_button is not None}')
+            next_button = driver.find_element(By.XPATH, "//button[@aria-label='next']")
             next_button.click()
             time.sleep(3)
         except:
